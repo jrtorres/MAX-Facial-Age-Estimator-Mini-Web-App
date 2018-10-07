@@ -57,4 +57,6 @@ The above command will pull docker image from Docker Hub and run it.
 
 ### Experiment with Model API
 
+The API server automatically generates an interactive Swagger documentation page. Go to http://localhost:5000 to load it. From there you see the API with the test requests.
+
 
