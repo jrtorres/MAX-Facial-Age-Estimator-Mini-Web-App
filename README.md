@@ -10,7 +10,7 @@ Create a web application using [MAX-Age Estimator mode](https://github.com/IBM/M
 
 ## Workshop prerequisite
 
-* Install docker
+* [Install docker](https://docs.docker.com/install/)
 * Install Code Editor (Sublime text) or Python IDE (PyCharm)
 
 ## Workshop Takeaways
