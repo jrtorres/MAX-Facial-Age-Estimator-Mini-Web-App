@@ -44,7 +44,7 @@ limitations under the License.
                 </div>
 
                 <div class="col-md-4 title-section">
-                    <h1>MAX Demo - Age Estimator</h1>
+                    <h1>MAX-Age Estimator</h1>
                 </div>
 
                 <div class="col-md-4">
@@ -66,20 +66,29 @@ limitations under the License.
                      </div>
                 </div>
             </div>
+            <div class="col-md-2">
+                    <div id="result" class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title">Result</div>
+                        </div>
+                        <div class="panel-body">
+                            Number of people detected: {{ people }}
+                        </div>
+                        <div class="panel-body">
+                            Average Age : {{ avg }}
+                        </div>
+                    </div>
+            </div>
+
         </div>
 
         <div class='row'>
             <div class="col-md-12">
-                      <h2>Estimated Age is : {{ age }}</h2>
-                      <img src="{{ prediction }}">
+                <img src = "{{ image_name }}" style="max-height: 700px; max-width: 1000px;" />
             </div>
         </div>
 
-        <div class="'row">
-            <div class="col-md-12">
-                <a href="{{ url_for('delete') }}">Delete Output Image</a>
-            </div>
-        </div>
+
 
         <footer class="footer">
             <hr/>
