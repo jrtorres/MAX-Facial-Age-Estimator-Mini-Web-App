@@ -116,6 +116,10 @@ Run the below command to start the web app.
 python app.py
 ```
 
+Access web app at ```http://127.0.0.1:8000```
+
+NOTE: The Facial Age Estimator endpoint must be available at ```http://localhost:5000``` for the web app to successfully start.
+
 
 # Links
 
