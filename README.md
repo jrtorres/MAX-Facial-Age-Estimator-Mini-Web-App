@@ -117,4 +117,20 @@ python app.py
 ```
 
 
+#Links
+
+1. [Model Asset Exchange](https://developer.ibm.com/code/exchanges/models/)
+2. [Center for Open-Source Data and AI Technologies](https://developer.ibm.com/code/open/centers/codait/)
+3. [MAX Announcement Blog](https://developer.ibm.com/code/2018/03/20/igniting-a-community-around-deep-learning-models-with-model-asset-exchange-max/)
+4. [Artificial Intelligence Code Patterns](https://developer.ibm.com/code/technologies/artificial-intelligence/)
+5. [Code Pattern Playlist](https://www.youtube.com/playlist?list=PLzUbsvIyrNfknNewObx5N7uGZ5FKH0Fde)
+6. Mater the art of data science with IBM's [Watson Studio](https://dataplatform.cloud.ibm.com/)
+7. [Deep Learning with Watson Studio](https://www.ibm.com/cloud/deep-learning)
+
+
+# License
+
+
+
+
 
