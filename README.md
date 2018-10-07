@@ -117,7 +117,7 @@ python app.py
 ```
 
 
-#Links
+# Links
 
 1. [Model Asset Exchange](https://developer.ibm.com/code/exchanges/models/)
 2. [Center for Open-Source Data and AI Technologies](https://developer.ibm.com/code/open/centers/codait/)
