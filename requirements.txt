@@ -1,8 +1,5 @@
 Flask
-flask-socketio
-gevent
+requests
 Pillow
 numpy
-requests
 opencv-python
-flake8
