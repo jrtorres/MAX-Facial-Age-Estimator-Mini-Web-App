@@ -57,6 +57,18 @@ The above command will pull docker image from Docker Hub and run it.
 
 ### Experiment with Model API
 
-The API server automatically generates an interactive Swagger documentation page. Go to http://localhost:5000 to load it. From there you see the API with the test requests.
+The API server automatically generates an interactive Swagger documentation page. Go to ```http://localhost:5000``` to load it. From there you see the API with the test requests.
+
+Use the ```model/predict``` endpoint to load a test file and get estimated ages and bounding boxes for the image from the API.
+
+The [model assets folder](https://github.com/IBM/MAX-Facial-Age-Estimator/tree/master/assets) contains one image you can use to test out the API, or you can use your own.
+
+You can also test it on the command line, for example:
+
+```
+curl -F "image=@path/to/tom_cruise.jpg" -X POST http://localhost:5000/model/predict
+```
+
+
 
 
