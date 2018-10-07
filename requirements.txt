@@ -1,0 +1,8 @@
+Flask
+flask-socketio
+gevent
+Pillow
+numpy
+requests
+opencv-python
+flake8
