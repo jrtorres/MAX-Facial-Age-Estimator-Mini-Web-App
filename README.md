@@ -31,7 +31,11 @@ $ pip install -r requirement.txt
 ### Start the Model API
 
 1. [Deploy the Model](#deploy-the-Model)
-2. [Experiment with Model API](#Experiment-with-Model-API)
+2. [Experiment with Model API](#Experiment-with-Model-API) (optional)
+
+### Building the Web App
+
+1. 
 
 
 
@@ -40,6 +44,16 @@ $ pip install -r requirement.txt
 # Start the Model API
 
 ### Deploy the Model
+
+* Run the docker image to automatically start the model serving API
+
+```
+docker run -it -p 5000:5000 codait/max-facial-age-estimator
+```
+
+The above command will pull docker image from Docker Hub and run it. 
+
+* To build the model locally,  run steps under 'Run Locally' from the [model Readme](https://github.com/IBM/MAX-Facial-Age-Estimator)
 
 ### Experiment with Model API
 
