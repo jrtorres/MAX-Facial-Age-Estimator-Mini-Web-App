@@ -2,7 +2,7 @@
 
 One place for all open source deep learning models.
 
-[Model Asset Exchange - Link](https://developer.ibm.com/code/exchanges/models/)
+Link to [Model Asset Exchange](https://developer.ibm.com/code/exchanges/models/)
 
 ## Workshop Goal
 
