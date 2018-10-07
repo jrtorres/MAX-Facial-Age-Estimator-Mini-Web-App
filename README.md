@@ -11,12 +11,7 @@ Create a web application using [MAX-Age Estimator mode](https://github.com/IBM/M
 ## Workshop prerequisite
 
 * Install docker
-* Run the below command to install all the dependencies:
-
-```
-$ pip install -r requirement.txt
-
-```
+* Install Code Editor (Sublime text) or Python IDE (PyCharm)
 
 ## Workshop Takeaways
 
@@ -35,10 +30,9 @@ $ pip install -r requirement.txt
 
 ### Build the Web App
 
-1. Clone the repo locally by running the following command:
-
-```
-git clone 
+1. [Code check out](#Code-check-out)
+2. [Install dependencies](#Install-dependencies)
+3. [Code edit](#Code-edit)
 
 
 
@@ -73,5 +67,33 @@ curl -F "image=@path/to/tom_cruise.jpg" -X POST http://localhost:5000/model/pred
 ```
 
 # Build Web App
+
+### Code check out
+
+Clone the repo locally by running the following command:
+
+```
+git clone https://github.com/SSaishruthi/Demo_app.git
+
+```
+
+Change the directory 
+
+```
+cd Demo_app
+```
+
+### Install dependencies
+
+Run the below command.
+
+```
+pip install -r requirements.txt
+```
+
+### Code edit
+
+* To send input image in model API, complete the below code in [app.py](app.py)
+
 
 
