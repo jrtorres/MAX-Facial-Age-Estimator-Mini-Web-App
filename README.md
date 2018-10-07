@@ -33,9 +33,12 @@ $ pip install -r requirement.txt
 1. [Deploy the Model](#deploy-the-Model)
 2. [Experiment with Model API](#Experiment-with-Model-API) (optional)
 
-### Building the Web App
+### Build the Web App
 
-1. 
+1. Clone the repo locally by running the following command:
+
+```
+git clone 
 
 
 
@@ -55,7 +58,7 @@ The above command will pull docker image from Docker Hub and run it.
 
 * To build the model locally,  run steps under 'Run Locally' from the [model Readme](https://github.com/IBM/MAX-Facial-Age-Estimator)
 
-### Experiment with Model API
+### Experiment with Model API (optional)
 
 The API server automatically generates an interactive Swagger documentation page. Go to ```http://localhost:5000``` to load it. From there you see the API with the test requests.
 
@@ -69,6 +72,6 @@ You can also test it on the command line, for example:
 curl -F "image=@path/to/tom_cruise.jpg" -X POST http://localhost:5000/model/predict
 ```
 
-
+# Build Web App
 
 
