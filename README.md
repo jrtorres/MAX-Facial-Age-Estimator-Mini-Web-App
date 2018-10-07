@@ -33,9 +33,7 @@ Create a web application using [MAX-Age Estimator mode](https://github.com/IBM/M
 1. [Code check out](#Code-check-out)
 2. [Install dependencies](#Install-dependencies)
 3. [Code edit](#Code-edit)
-
-
-
+4. [Running the server](#Running-the-server)
 
 
 # Start the Model API
@@ -93,7 +91,30 @@ pip install -r requirements.txt
 
 ### Code edit
 
-* To send input image in model API, complete the below code in [app.py](app.py)
+* To send input image from server to model API for prediction, complete the below code in [app.py](app.py)
+
+```
+result_age = requests.post('http://localhost:5000/model/predict',files=my_files, json={"key": "value"})
+```
+* Extract prediction
+
+```
+output_data = result_age.json()
+result = output_data['predictions']
+```
+* Update result to Web UI
+
+```
+return render_template("index.html", image_name=output_name, people= ppl_count, avg=average_age)
+```
+
+### Running the server
+
+Run the below command to start the web app.
+
+```
+python app.py
+```
 
 
 
