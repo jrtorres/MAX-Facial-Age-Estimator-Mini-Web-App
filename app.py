@@ -55,7 +55,7 @@ def upload():
         #convert string data to numpy array
         np_inp_image = np.fromstring(file_request, np.uint8)
         #convert numpy array to image
-        img = cv2.imdecode(np_inp_image, cv2.CV_LOAD_IMAGE_UNCHANGED)
+        img = cv2.imdecode(np_inp_image, cv2.IMREAD_UNCHANGED)
         image_processed, img_processed_height, img_processed_width = image_preprocess(img)
         #encode image
         _, image_encoded = cv2.imencode('.jpg', img)
