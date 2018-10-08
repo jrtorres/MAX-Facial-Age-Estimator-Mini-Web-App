@@ -8,7 +8,6 @@ import shutil
 import os
 import glob
 from random import randint
-
  
 app = Flask(__name__)
 
@@ -64,17 +63,11 @@ def upload():
         my_files = {'image': image_encoded.tostring(),
                         'Content-Type': 'multipart/form-data',
                         'accept': 'application/json'}
-        """
-        complete code - 1
-        """
-        result_age =
-        """
-        complete code - 2
-        """
-        #extracting prediction 
-        output_data =
-        result =
         #
+        result_age = requests.post('http://localhost:5000/model/predict',files=my_files, json={"key": "value"})
+        #extracting prediction 
+        output_data = result_age.json()
+        result = output_data['predictions']
         total_age = 0
         #
         if len(result) <= 0:
@@ -99,10 +92,7 @@ def upload():
                 #
         average_age = total_age / len(result)
         ppl_count = len(result)
-        """
-        complete code - 3
-        """
-        return 
+        return render_template("index.html", image_name=output_name, people= ppl_count, avg=average_age)
     else:
         return render_template("index.html")
            

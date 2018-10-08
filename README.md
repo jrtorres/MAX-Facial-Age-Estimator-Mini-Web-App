@@ -135,6 +135,3 @@ NOTE: The Facial Age Estimator endpoint must be available at ```http://localhost
 # License
 
 
-
-
-
