@@ -63,7 +63,7 @@ def upload():
         my_files = {'image': image_encoded.tostring(),
                         'Content-Type': 'multipart/form-data',
                         'accept': 'application/json'}
-    
+        #
         result_age = requests.post('http://localhost:5000/model/predict',files=my_files, json={"key": "value"})
         #extracting prediction 
         output_data = result_age.json()
