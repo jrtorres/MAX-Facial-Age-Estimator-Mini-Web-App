@@ -29,24 +29,21 @@ def draw_label(image, point, image_box, label, font=cv2.FONT_HERSHEY_SIMPLEX,
                   (int(x2), int(y2)), (0, 255, 255), 2)
 
 
-@app.route('/')
-def home():
-    return render_template('index.html')
+@app.route('/', methods=['POST', 'GET'])
+def root():
 
+    # removing all previous files in folder before start processing
+    output_folder = 'static/img/temp'
+    path = os.getcwd()
+    file_path = (path + output_folder + '/*.*')
+    for file in glob.glob(file_path):
+        print('in')
+        print(file)
+        os.remove(file)
 
-@app.route('/upload', methods=['POST', 'GET'])
-def upload():
-
+    # on post handle upload
     if request.method == 'POST':
 
-        output_folder = 'static'
-        path = os.getcwd()
-        file_path = (path + '/static/*.*')
-        # removing all previous files in folder before start processing
-        for file in glob.glob(file_path):
-            print('in')
-            print(file)
-            os.remove(file)
         # get file details
         file_data = request.files['file']
         # file_name = file_data.filename
@@ -90,8 +87,6 @@ def upload():
                 # pre-process image
                 draw_label(image_processed, (int(x1), int(y1)),
                            (int(x2), int(y2)), pred_age)
-                image_processed = cv2.cvtColor(image_processed,
-                                               cv2.COLOR_BGR2RGB)
                 # output
                 if i == (len(result) - 1):
                     file_name = (str(randint(0, 999999)) + '.jpg')
