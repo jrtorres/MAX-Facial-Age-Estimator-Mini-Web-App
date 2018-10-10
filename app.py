@@ -89,7 +89,7 @@ def upload():
                 y2 = y1 + h
                 #pre-process image
                 draw_label(image_processed, (int(x1), int(y1)), (int(x2), int(y2)), pred_age)
-                image_processed = cv2.cvtColor(image_processed, cv2.COLOR_BGR2RGB)
+                #image_processed = cv2.cvtColor(image_processed, cv2.COLOR_BGR2RGB)
                 #
                 #output
                 if i == (len(result) - 1):
