@@ -118,7 +118,10 @@ python app.py
 
 Access web app at ```http://127.0.0.1:8000```
 
-NOTE: The Facial Age Estimator endpoint must be available at ```http://localhost:5000``` for the web app to successfully start.
+NOTE: 
+
+* The Facial Age Estimator endpoint must be available at ```http://localhost:5000``` for the web app to successfully start.
+* 'Average age' will be useful if there are more than one person in the picture. If there is only one person, average age is the person's detected age
 
 ![Desired Result](/docs/result.png)
 
