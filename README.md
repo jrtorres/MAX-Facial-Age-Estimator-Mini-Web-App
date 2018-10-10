@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/CODAIT/MAX-Workshop-Web-App.svg?branch=master)](https://travis-ci.org/CODAIT/MAX-Workshop-Web-App)
+
 # IBM Model Asset Exchange Demo - Facial Age Estimator
 
 One place for all open source deep learning models.

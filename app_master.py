@@ -37,13 +37,14 @@ def image_preprocess(img_array):
 def draw_label(image, point, image_box, label, font=cv2.FONT_HERSHEY_SIMPLEX,
                font_scale=1, thickness=2):
     """Draws the labels and bounding boxes on the image"""
-    size = cv2.getTextSize(label, font, font_scale, thickness)[0]
     x1, y1 = point
     x2, y2 = image_box
-    cv2.rectangle(image, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 2)
+    cv2.rectangle(image, (int(x1), int(y1)),
+                  (int(x2), int(y2)), (0, 255, 0), 2)
     cv2.putText(image, label, point, font, font_scale,
                 (255, 255, 255), thickness)
-    cv2.putText(image, label, point, font, font_scale, (0, 0, 0), thickness-1)
+    cv2.putText(image, label, point, font, font_scale,
+                (0, 0, 0), thickness - 1)
 
 
 @app.route('/', methods=['POST', 'GET'])
