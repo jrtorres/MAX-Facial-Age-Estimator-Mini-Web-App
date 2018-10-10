@@ -6,7 +6,7 @@ One place for all open source deep learning models.
 
 ## Workshop Goal
 
-Create a web application using [MAX-Age Estimator mode](https://github.com/IBM/MAX-Facial-Age-Estimator)
+Create a web application using [MAX-Age Estimator model](https://github.com/IBM/MAX-Facial-Age-Estimator)
 
 ## Workshop prerequisite
 
