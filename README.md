@@ -1,21 +1,23 @@
+[![Build Status](https://travis-ci.org/CODAIT/MAX-Workshop-Web-App.svg?branch=master)](https://travis-ci.org/CODAIT/MAX-Workshop-Web-App)
+
 # IBM Model Asset Exchange Demo - Facial Age Estimator
 
 One place for all open source deep learning models.
 
-![Model Asset Exchange](/docs/MAX.png)
+[![Model Asset Exchange](/doc/source/images/MAX.png)](https://developer.ibm.com/code/exchanges/models/)
 
 ## Workshop Goal
 
-Create a web application using [MAX Facial Age Estimator model](https://github.com/IBM/MAX-Facial-Age-Estimator)
+Create a web application using the [MAX Facial Age Estimator model](https://github.com/IBM/MAX-Facial-Age-Estimator)
 
 ## Workshop prerequisite
 
 * [Install docker](https://docs.docker.com/install/)
-* Install Code Editor (Sublime text) or Python IDE (PyCharm)
+* Install a code editor (Sublime text) or Python IDE (PyCharm)
 
 ## Workshop Takeaways
 
-* Build docker image of MAX model.
+* Build a docker image of a MAX model.
 * Deploy a deep learning model with a REST endpoint
 * Run a web application using the model's REST API
 
@@ -23,34 +25,34 @@ Create a web application using [MAX Facial Age Estimator model](https://github.c
 
 ## Run Locally
 
+#### Start the Model API
+
+1. [Deploy the Model](#deploy-the-model)
+2. [Experiment with Model API (optional)](#experiment-with-model-api-optional)
+
+#### Build the Web App
+
+1. [Clone the repository](#clone-the-repository)
+2. [Install dependencies](#install-dependencies)
+3. [Edit the code](#edit-the-code)
+4. [Start the server](#start-the-server)
+
+
 ### Start the Model API
 
-1. [Deploy the Model](#deploy-the-Model)
-2. [Experiment with Model API](#Experiment-with-Model-API) (optional)
-
-### Build the Web App
-
-1. [Code check out](#Code-check-out)
-2. [Install dependencies](#Install-dependencies)
-3. [Code edit](#Code-edit)
-4. [Running the server](#Running-the-server)
-
-
-# Start the Model API
-
-### Deploy the Model
+#### Deploy the Model
 
 * Run the docker image to automatically start the model serving API
 
 ```
-docker run -it -p 5000:5000 codait/max-facial-age-estimator
+$ docker run -it -p 5000:5000 codait/max-facial-age-estimator
 ```
 
 The above command will pull docker image from Docker Hub and run it. 
 
 * To build the model locally,  run steps under 'Run Locally' from the [model Readme](https://github.com/IBM/MAX-Facial-Age-Estimator)
 
-### Experiment with Model API (optional)
+#### Experiment with Model API (optional)
 
 The API server automatically generates an interactive Swagger documentation page. Go to ```http://localhost:5000``` to load it. From there you see the API with the test requests.
 
@@ -61,69 +63,71 @@ The [model assets folder](https://github.com/IBM/MAX-Facial-Age-Estimator/tree/m
 You can also test it on the command line, for example:
 
 ```
-curl -F "image=@path/to/tom_cruise.jpg" -X POST http://localhost:5000/model/predict
+$ curl -F "image=@path/to/image.jpg" -X POST http://localhost:5000/model/predict
 ```
 
-# Build Web App
+## Build the Web App
 
-### Code check out
+#### Clone the repository
 
 Clone the repo locally by running the following command:
 
 ```
-git clone https://github.com/CODAIT/MAX-Workshop-Web-App.git
-
+$ git clone https://github.com/CODAIT/MAX-Workshop-Web-App.git
 ```
 
 Change the directory 
 
 ```
-cd Demo_app
+$ cd MAX-Workshop-Web-App
 ```
 
-### Install dependencies
+#### Install dependencies
 
-Run the below command.
-
-```
-pip install -r requirements.txt
-```
-
-### Code edit
-
-* To send input image from server to model API for prediction, complete the below code in [app.py](app.py)
+Run the following command:
 
 ```
-result_age = requests.post('http://localhost:5000/model/predict',files=my_files, json={"key": "value"})
+$ pip install -r requirements.txt
 ```
+
+#### Edit the code
+
+* To send an input image from the server to the model API for prediction, complete the code below in [app.py](app.py)
+
+```
+result_age = requests.post('http://localhost:5000/model/predict', files=my_files, json={"key": "value"})
+```
+
 * Extract prediction
 
 ```
 output_data = result_age.json()
 result = output_data['predictions']
 ```
-* Update result to Web UI
+
+* Update Web UI with result
 
 ```
-return render_template("index.html", image_name=output_name, people= ppl_count, avg=average_age)
+return render_template("index.html", image_name=output_name, people=ppl_count, avg=average_age)
 ```
 
-### Running the server
+#### Start the server
 
-Run the below command to start the web app.
+Run the following command to start the web app:
 
 ```
-python app.py
+$ python app.py
 ```
 
-Access web app at ```http://127.0.0.1:8000```
+Access the web app at ```http://localhost:8000```
 
 NOTE: 
 
 * The Facial Age Estimator endpoint must be available at ```http://localhost:5000``` for the web app to successfully start.
-* 'Average age' will be useful if there is more than one person in the picture. If there is only one person, average age is the person's detected age
 
-![Desired Result](/docs/result.png)
+* 'Average Age' will be useful if there is more than one person in the picture. If there is only one person, average age will be the person's detected age.
+
+![Desired Result](/doc/source/images/result.png)
 
 
 # Links
@@ -139,4 +143,4 @@ NOTE:
 
 # License
 
-
+[Apache 2.0](LICENSE)

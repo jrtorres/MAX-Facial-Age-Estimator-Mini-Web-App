@@ -1,6 +1,5 @@
 Flask
 requests
-Pillow
 numpy
 opencv-python
-opencv-contrib-python
+flake8

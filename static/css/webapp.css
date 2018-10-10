@@ -47,3 +47,8 @@ body {
     background-color: #1E8B87;
     border-color: #24D8B89;
 }
+
+.img-body img {
+    max-height: 700px;
+    max-width: 1000px;
+}
