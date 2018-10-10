@@ -34,11 +34,7 @@ def root():
 
     # removing all previous files in folder before start processing
     output_folder = 'static/img/temp'
-    path = os.getcwd()
-    file_path = (path + output_folder + '/*.*')
-    for file in glob.glob(file_path):
-        print('in')
-        print(file)
+    for file in glob.glob(output_folder + '/*'):
         os.remove(file)
 
     # on post handle upload
