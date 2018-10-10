@@ -71,7 +71,7 @@ curl -F "image=@path/to/tom_cruise.jpg" -X POST http://localhost:5000/model/pred
 Clone the repo locally by running the following command:
 
 ```
-git clone https://github.com/SSaishruthi/Demo_app.git
+git clone https://github.com/CODAIT/MAX-Workshop-Web-App.git
 
 ```
 
