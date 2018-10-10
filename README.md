@@ -63,7 +63,7 @@ The [model assets folder](https://github.com/IBM/MAX-Facial-Age-Estimator/tree/m
 You can also test it on the command line, for example:
 
 ```
-$ curl -F "image=@path/to/tom_cruise.jpg" -X POST http://localhost:5000/model/predict
+$ curl -F "image=@path/to/image.jpg" -X POST http://localhost:5000/model/predict
 ```
 
 ## Build the Web App
