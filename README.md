@@ -2,7 +2,7 @@
 
 One place for all open source deep learning models.
 
-![Model Asset Exchange](docs/MAX.jpg)
+![Model Asset Exchange](/docs/MAX.png)
 
 ## Workshop Goal
 
