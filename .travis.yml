@@ -3,4 +3,4 @@ python:
   - "2.7"
   - "3.6"
 script:
-  - flake8 -v app_master.py
+  - flake8 -v

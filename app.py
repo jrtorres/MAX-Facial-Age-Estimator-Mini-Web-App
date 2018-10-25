@@ -15,12 +15,21 @@
 #
 
 from flask import Flask, render_template, request
+import argparse
 import requests
 import cv2
 import numpy as np
 import os
 import glob
 from random import randint
+
+# parse port and model endpoint args
+parser = argparse.ArgumentParser(description='MAX Facial Age Estimator')
+parser.add_argument('--port', type=int, nargs='?', default=8000,
+                    help='port to run the web app on')
+parser.add_argument('--ml-endpoint', nargs='?', metavar='URL',
+                    default='http://localhost:5000', help='model api server')
+args = parser.parse_args()
 
 app = Flask(__name__)
 
@@ -78,17 +87,13 @@ def root():
             'Content-Type': 'multipart/form-data',
             'accept': 'application/json'
         }
-        """
-        COMPLETE CODE - Send image to the model API for prediction
-        """
-        result_age =
 
-        """
-        COMPLETE CODE - Extract prediction
-        """
+        model = args.ml_endpoint.rstrip('/') + '/model/predict'
+        result_age = requests.post(url=model, files=my_files)
+
         # extracting prediction
-        output_data =
-        result =
+        output_data = result_age.json()
+        result = output_data['predictions']
 
         total_age = 0
 
@@ -115,14 +120,12 @@ def root():
         average_age = int(total_age / len(result))
         ppl_count = len(result)
 
-        """
-        COMPLETE CODE - Update Web UI with result
-        """
-        return
+        return render_template("index.html", image_name=output_name,
+                               people=ppl_count, avg=average_age)
     else:
         # on GET return index.html
         return render_template("index.html")
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8000)
+    app.run(debug=True, host='0.0.0.0', port=args.port)
