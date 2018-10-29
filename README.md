@@ -22,6 +22,7 @@ for a version that processes webcam video instead of uploaded images.
 2. [Install dependencies](#install-dependencies)
 3. [Start the server](#start-the-server)
 4. [Configure ports (Optional)](#configure-ports-optional)
+5. [Instructions for Docker (Optional)](#instructions-for-docker-optional)
 
 ### Start the Model API
 
@@ -94,6 +95,44 @@ If you want to use a different port or are running the model API at a different 
 ```
 $ python app.py --port=[new port] --model=[endpoint url including protocol and port]
 ```
+
+#### Instructions for Docker (Optional)
+
+To run the web app with Docker the containers running the web server and the REST endpoint need to share the same
+network stack. This is done in the following steps:
+
+Modify the command that runs the Facial Age Estimator REST endpoint to map an additional port in the container to a
+port on the host machine. In the example below it is mapped to port `8000` on the host but other ports can also be used.
+
+    docker run -it -p 5000:5000 -p 8000:8000 --name max-facial-age-estimator codait/max-facial-age-estimator
+
+Build the web app image by running:
+
+    docker build -t max-facial-age-estimator-mini-web-app .
+
+Run the web app container using:
+
+    docker run --net='container:max-facial-age-estimator' -it max-facial-age-estimator-mini-web-app
+
+##### Using the Docker Hub Image
+
+You can also deploy the web app with the latest docker image available on DockerHub by running:
+
+    docker run --net='container:max-facial-age-estimator' -it codait/max-facial-age-estimator-mini-web-app
+
+This will use the model docker container run above and can be run without cloning the web app repo locally.
+
+## Deploy on Kubernetes
+
+You can also deploy the model and web app on Kubernetes using the latest docker images on Docker Hub.
+
+On your Kubernetes cluster, run the following commands:
+
+    kubectl apply -f https://raw.githubusercontent.com/IBM/MAX-Facial-Age-Estimator/master/max-facial-age-estimator.yaml
+    kubectl apply -f https://raw.githubusercontent.com/CODAIT/MAX-Facial-Age-Estimator-Mini-Web-App/master/max-facial-age-estimator-mini-web-app.yaml
+
+The web app will be available at port `8000` of your cluster.
+The model will only be available internally, but can be accessed externally through the `NodePort`.
 
 # Links
 
