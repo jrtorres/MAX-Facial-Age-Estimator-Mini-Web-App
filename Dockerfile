@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-FROM  python:alpine
+FROM  python:2.7
 
 COPY . /app
 WORKDIR /app
