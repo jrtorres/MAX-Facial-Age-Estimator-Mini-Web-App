@@ -80,7 +80,7 @@ limitations under the License.
 
         <div class='row'>
             <div class="col-md-12 img-body">
-                <img src="{{ image_name }}" alt="{{ error_msg }}" />
+                <img src="{{ image_name }}" alt="{{ error_msg }}" onError="this.onerror=null;this.src='{{ image_name }}';"/>
             </div>
         </div>
 
