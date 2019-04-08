@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-FROM  python:2.7
+FROM  python:3.7.3
 
 COPY . /app
 WORKDIR /app
